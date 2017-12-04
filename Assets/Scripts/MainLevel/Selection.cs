@@ -113,7 +113,6 @@ public class Selection : MonoBehaviour {
         int helpRandom = Random.Range(1, 10);
         if (rejectRandom > 0)
         {
-           // onAction("Selected Card");
             if (cardToHand.helpHarmStat >= helpRandom)
             {
                 StartCoroutine(EnableWaitDisable(acceptedAlert, time));
@@ -122,6 +121,7 @@ public class Selection : MonoBehaviour {
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
                 cardToHand.gameObject.GetComponent<Button>().enabled = false;
                 handOffset += offsetIncre;
+                XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
                 //cardToHand.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
                 onSample("Money", Random.Range(10, 25));
                 onSample("Population", 1f);
@@ -136,6 +136,7 @@ public class Selection : MonoBehaviour {
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
                 cardToHand.gameObject.GetComponent<Button>().enabled = false;
                 handOffset += offsetIncre;
+                XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
                 onSample("Money", Random.Range(5, 10));
                 onSample("Population", 1f);
                 onSample("Satisfaction", -0.05f);
@@ -143,6 +144,7 @@ public class Selection : MonoBehaviour {
             }
 		} else
         {
+            XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "True", "N/A", System.DateTime.Now.ToString());
             Handheld.Vibrate();
             StartCoroutine(EnableWaitDisable(rejectedAlert, 1.667f));
             cardsInRejection.Add (cardToHand.GetComponent<Card> ());

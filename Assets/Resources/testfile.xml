@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <DataSet SessionID="1">
+    <HelpChance>1</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:11 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:11 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>7</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="6">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="7">
+    <HelpChance>9</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="8">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/4/2017 11:36:12 PM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="9">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/4/2017 11:37:18 PM</Timestamp>
+  </DataSet>
+</Data>

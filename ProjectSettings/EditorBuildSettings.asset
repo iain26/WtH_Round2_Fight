@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: 1c182f2088177684aaa53e83f3844b77
+  - enabled: 0
+    path: 
+    guid: 576fc66cef0c1ec4b9df4dcbb57e2f95
+  - enabled: 1
+    path: Assets/Scenes/Draw_Phase.unity
+    guid: 101afdb470dce184c89ee0ffa66f6343
+  - enabled: 0
+    path: 
+    guid: 96600b7ca3e21ab4fb9d9344606cac9d
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: f0c2e2031c829274b9578771b71f08ed
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: b3d6875259c95a54684e72ddaac79bca
+  - enabled: 1
+    path: Assets/Scenes/CharacterCreation.unity
+    guid: d66863ee1a0a57f4e96c1d20d7504ac6
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: eb3ce055e65219047a3df3bcda6639c8
+  - enabled: 0
+    path: Assets/Scenes/Tutorial_Check.unity
+    guid: ce4b5071fd54b524d94441d578fe3e74
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 15360deba8eb65f449e4bb7cbc87cd75

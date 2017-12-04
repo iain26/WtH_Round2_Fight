@@ -1,0 +1,118 @@
+Initialize engine version: 5.6.4f1 (ac7086b8d112)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+    Driver:   21.20.16.4550
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.094 seconds
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Iainco\Documents\PreProGame7.1\Week7_Proto_TestBuild_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 5.277435 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.370127 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 757.
+Total: 0.791892 ms (FindLiveObjects: 0.057173 ms CreateObjectMapping: 0.045653 ms MarkObjects: 0.445439 ms  DeleteObjects: 0.242346 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.817492 ms
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 1614.
+Total: 1.218558 ms (FindLiveObjects: 0.116906 ms CreateObjectMapping: 0.061439 ms MarkObjects: 0.901972 ms  DeleteObjects: 0.136959 ms)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RejectedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 52.132221 ms
+
+Unloading 546 unused Assets to reduce memory usage. Loaded Objects now: 280.
+Total: 1.107199 ms (FindLiveObjects: 0.068693 ms CreateObjectMapping: 0.053759 ms MarkObjects: 0.213759 ms  DeleteObjects: 0.770559 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.386559 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 368.
+Total: 0.313173 ms (FindLiveObjects: 0.040106 ms CreateObjectMapping: 0.016639 ms MarkObjects: 0.243626 ms  DeleteObjects: 0.011946 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.546132 ms
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 761.
+Total: 0.703999 ms (FindLiveObjects: 0.072959 ms CreateObjectMapping: 0.040959 ms MarkObjects: 0.375039 ms  DeleteObjects: 0.214186 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.788052 ms
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 1614.
+Total: 1.469865 ms (FindLiveObjects: 0.098559 ms CreateObjectMapping: 0.059306 ms MarkObjects: 1.178878 ms  DeleteObjects: 0.132266 ms)
+
+acceptedAlert played
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3394 -> priority: 1 
+  Thread -> id: 338c -> priority: 1 

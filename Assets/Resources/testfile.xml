@@ -1,3 +1,363 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Data>
+  <DataSet SessionID="1">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:25 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:29 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:29 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:29 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>1</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:30 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="6">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:30 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="7">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:58:30 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:29 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:30 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:31 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:31 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>9</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:32 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="6">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:32 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="7">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 3:59:32 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:01:12 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:01:14 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:13 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:14 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:15 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:15 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:16 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="6">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:16 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="7">
+    <HelpChance>1</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:16 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="8">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:16 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="9">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:17 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="10">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:18 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="11">
+    <HelpChance>7</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:20 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>7</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:42 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:44 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:45 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:45 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>7</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:45 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="6">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:46 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="7">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:46 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="8">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:46 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="9">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:46 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="10">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:46 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="11">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:47 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="12">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:47 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="13">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:47 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="14">
+    <HelpChance>9</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:47 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="15">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:47 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="16">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:48 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="17">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:48 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="18">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:48 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="19">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:48 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="20">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:02:49 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:08:15 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>1</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:08:17 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:08:19 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:08:20 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:51:49 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:51:55 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>7</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:51:57 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>9</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 4:59:31 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:59:33 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 4:59:34 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 5:00:40 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 5:00:43 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 5:00:45 AM</Timestamp>
+  </DataSet>
 </Data>

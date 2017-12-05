@@ -55,6 +55,7 @@
     <Timestamp>12/4/2017 11:37:18 PM</Timestamp>
   </DataSet>
   <DataSet SessionID="1">
+<<<<<<< HEAD
     <HelpChance>9</HelpChance>
     <Rejected>False</Rejected>
     <Helpedorharmed>Helped</Helpedorharmed>
@@ -83,5 +84,17 @@
     <Rejected>False</Rejected>
     <Helpedorharmed>Helped</Helpedorharmed>
     <Timestamp>12/5/2017 12:17:55 AM</Timestamp>
+=======
+    <HelpChance>5</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 12:22:45 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>7</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 12:22:48 AM</Timestamp>
+>>>>>>> 618a39c586650e8bb454403f0b5987185b00f930
   </DataSet>
 </Data>

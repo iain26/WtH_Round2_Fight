@@ -54,4 +54,34 @@
     <Helpedorharmed>Helped</Helpedorharmed>
     <Timestamp>12/4/2017 11:37:18 PM</Timestamp>
   </DataSet>
+  <DataSet SessionID="1">
+    <HelpChance>9</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 12:17:54 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="2">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 12:17:55 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="3">
+    <HelpChance>3</HelpChance>
+    <Rejected>True</Rejected>
+    <Helpedorharmed>N/A</Helpedorharmed>
+    <Timestamp>12/5/2017 12:17:55 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="4">
+    <HelpChance>5</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 12:17:55 AM</Timestamp>
+  </DataSet>
+  <DataSet SessionID="5">
+    <HelpChance>3</HelpChance>
+    <Rejected>False</Rejected>
+    <Helpedorharmed>Helped</Helpedorharmed>
+    <Timestamp>12/5/2017 12:17:55 AM</Timestamp>
+  </DataSet>
 </Data>

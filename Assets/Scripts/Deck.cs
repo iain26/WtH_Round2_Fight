@@ -21,20 +21,10 @@ public class Deck : MonoBehaviour {
     // Use this for initialization
     void Start() {
         game = GameObject.Find("PlayerMgr").GetComponent<Selection>();
-        //for (int i = 0; i < deckSize; i++) {
         AddCardToDeck();
-        //}
-        //foreach (Card card in deck)
-        //{
-        //    card.transform.localScale = new Vector3(1f, 1f, 1f);
-        //}
     }
 
     public void AddCardToDeck() {
-        //float offset = 0;
-        //float offsetIncre = ((float)Screen.width / 6.8f) * 1.2f;
-        //for (int i = 0; i < 5; i++)
-        //{
         deck.Clear();
         GameObject card = (GameObject)Instantiate(cardPrefab);
         card.name = "Card " + (count).ToString();
@@ -43,16 +33,11 @@ public class Deck : MonoBehaviour {
         card.transform.localScale = new Vector3(5f, 5f, 5f);
         deck.Add(card.GetComponent<Card>());
         count++;
-        //}
-        // onDraw();
     }
 		
 	
 	// Update is called once per frame
 	void Update () { 
-		//foreach (Card card in deck) {
-		//	card.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
-  //      }
 	}
 
 }

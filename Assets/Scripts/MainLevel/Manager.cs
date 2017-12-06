@@ -7,23 +7,25 @@ public class Manager : MonoBehaviour {
 
     public float fSatisfaction = 0.5f;
     public float fMoney = 25f;
+    public float fSR = 25f;
     float fPopulation = 1f;
     float fFood = 10f;
     float fNumBuilding = 0f;
 
     Image satisfactionIm;
     Text moneyT;
+    Text srT;
     Text populationT;
     Text foodT;
 
     public float speed = 1f;
 
-    bool sampling = true;
+    bool sampling = false;
 
     GameObject samplingObject;
     GameObject samplingButton;
 
-    bool building = false;
+    bool building = true;
 
     GameObject buildingMenuObject;
     GameObject BuildingButton;
@@ -47,20 +49,19 @@ public class Manager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //Screen.orientation = ScreenOrientation.LandscapeRight;
         IntialiseObjects();
     }
 
     private void OnEnable()
     {
         Selection.onSample += StatChange;
-        Restoration.onPurchase += StatChange;
+        Build.onPurchase += StatChange;
     }
 
     private void OnDisable()
     {
         Selection.onSample -= StatChange;
-        Restoration.onPurchase -= StatChange;
+        Build.onPurchase -= StatChange;
     }
 
     void StatChange(string stat, float change)
@@ -73,6 +74,9 @@ public class Manager : MonoBehaviour {
             case "Money":
                 fMoney += change;
                 break;
+            case "SR":
+                fSR += change;
+                break;
             case "Food":
                 fFood += change;
                 break;
@@ -81,6 +85,9 @@ public class Manager : MonoBehaviour {
                 break;
             case "Satisfaction":
                 fSatisfaction += change;
+                break;
+            case "Time":
+                timeSec = 0f;
                 break;
         }
     }
@@ -96,14 +103,15 @@ public class Manager : MonoBehaviour {
         BuildingButton = GameObject.Find("BuildingMenuButton");
 
         samplingObject.SetActive(sampling);
-        samplingButton.SetActive(false);
+        samplingButton.SetActive(!sampling);
 
-        //satisfactionIm = GameObject.Find("HappinessMeter").GetComponent<Image>();
+        BuildingButton.SetActive(!building);
+        
         moneyT = GameObject.Find("Money").GetComponent<Text>();
+        srT = GameObject.Find("SR").GetComponent<Text>();
         populationT = GameObject.Find("Population").GetComponent<Text>();
-        //foodT = GameObject.Find("Food").GetComponent<Text>();
 
-        gameTimeT = GameObject.Find("GameTimeT").GetComponent<Text>();
+        //gameTimeT = GameObject.Find("GameTimeT").GetComponent<Text>();
     }
 
     public void Analysing()
@@ -166,15 +174,15 @@ public class Manager : MonoBehaviour {
 
     void SetMeters()
     {
-        //satisfactionIm.fillAmount = fSatisfaction;
-        float needle = fSatisfaction - 0.5f;
-        //satisfactionIm.transform.SetPositionAndRotation(satisfactionIm.transform.position, new Quaternion(0,0, 90f*dial,0));
-        //satisfactionIm.transform.localRotation = Quaternion.Euler(0, 0, -180f * needle);
+        //float needle = fSatisfaction - 0.5f;
         int iMoney = (int)fMoney;
         moneyT.text = iMoney.ToString();
+
+        int iSR = (int)fSR;
+        srT.text = iSR.ToString();
+
         populationT.text = fPopulation.ToString();
         int iFood = (int)fFood;
-        //foodT.text = iFood.ToString();
 
         string timeS;
         gameTimeSec += Time.deltaTime;
@@ -186,7 +194,7 @@ public class Manager : MonoBehaviour {
                 gameTimeMin++;
             }
         }
-        float displayTime = 60f / timeSec;
+        float displayTime = timeSec/60f;
         GameObject.Find("TimeFillBar").GetComponent<Image>().fillAmount = 1f - displayTime;
         //int gameTimeSecInt = (int)gameTimeSec;
         //timeS = gameTimeMin.ToString() + ":" + gameTimeSecInt.ToString();
@@ -197,29 +205,11 @@ public class Manager : MonoBehaviour {
         //gameTimeT.text = "Total Game Time:  " + timeS;
     }
 
-    void CalculateSatisfaction()
-    {
-        //if (!starving)
-        //{
-        //    fSatisfaction += 0.01f * Time.deltaTime;
-        //}
-        //else
-        //{
-        //    fSatisfaction -= 0.01f * Time.deltaTime;
-        //}
+    public float GetMoneyCurrently() { return fMoney; }
 
-        //if(fSatisfaction > 1f)
-        //{
-        //    fSatisfaction = 1f;
-        //}
-        //if (fSatisfaction <= 0f)
-        //{
-        //    //Screen.orientation = ScreenOrientation.Portrait;
-        //    Application.LoadLevel("Lose");
-        //}
-        //Debug.Log(fSatisfaction);
+    public float GetSRCurrently() { return fSR; }
 
-    }
+    public float GetPopulationCurrently() { return fPopulation; }
 
     //IEnumerator TakeAwayFood()
     //{
@@ -273,28 +263,22 @@ public class Manager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        //fFood += (speed */* Random.Range(0.5f, 0.7f)*/ 0.3f) * Time.deltaTime * fNumBuilding;
+        
     }
 
     // Update is called once per frame
     void Update ()
     {
-        //StartCoroutine(TakeAwayFood());
-        //fFood -= (speed * Random.Range(0.5f, 0.7f)) * Time.deltaTime * fPopulation;
-
-        //fMoney += (speed * 0.75f) * Time.deltaTime * fPopulation;
-        //fMoney -= (speed * 0.45f) * Time.deltaTime * fNumBuilding;
-        CalculateSatisfaction();
-        Timer();
         SetMeters();
+        Timer();
 
         if (samplingObject != null)
             samplingObject.SetActive(sampling);
         else
             print("sampling panel gameobject is not active");
 
-        if (buildingMenuObject != null)
-            buildingMenuObject.SetActive(building);
+        if (buildingMenuObject != null) { }
+        //buildingMenuObject.SetActive(building);
         else
             print("building menu gameobject is not active");
 

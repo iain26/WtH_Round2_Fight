@@ -24,6 +24,8 @@ public class Build : MonoBehaviour {
 
     bool waitForDrop = false;
 
+    int moneyDropped = 2;
+
     float speed = 20f;
 
     // Use this for initialization
@@ -50,11 +52,11 @@ public class Build : MonoBehaviour {
         switch (resource)
         {
             case "Money":
-                fRandom = Random.Range(25 * buildCount, 40 * buildCount);
+                fRandom = Random.Range(35 * buildCount, 40 * buildCount);
                 onPurchase("Money", fRandom);
                 break;
             case "SR":
-                fRandom = Random.Range(5 * buildCount, 8 * buildCount);
+                fRandom = Random.Range(6 * buildCount, 8 * buildCount);
                 onPurchase("SR", fRandom);
                 break;
         }
@@ -80,9 +82,10 @@ public class Build : MonoBehaviour {
     IEnumerator DropResource()
     {
         waitForDrop = true;
-        yield return new WaitForSeconds(Random.Range(5,10));
-        if(Random.Range(0, 2) > 0)
+        yield return new WaitForSeconds(Random.Range(2,5));
+        if(Random.Range(0, moneyDropped) > 0)
         {
+            moneyDropped--;
             GameObject moneyDrop = GameObject.Instantiate(moneyCollectable);
             moneyDrop.name = "MoneyDrop";
             moneyDrop.transform.SetParent(GameObject.Find("DropParent").transform);
@@ -91,6 +94,7 @@ public class Build : MonoBehaviour {
         }
         else
         {
+            moneyDropped++;
             GameObject srDrop = GameObject.Instantiate(srCollectable);
             srDrop.name = "SRDrop";
             srDrop.transform.SetParent(GameObject.Find("DropParent").transform);
@@ -117,7 +121,6 @@ public class Build : MonoBehaviour {
                 background.uvRect = new Rect(0.07f, background.uvRect.y + Time.deltaTime * 0.0089f, 0.9f, 0.6f);
                 buildingGrid.transform.localPosition = new Vector3(0f, buildingGrid.transform.localPosition.y - (Time.deltaTime * speed), 0f);
             }
-                //buildingGrid.transform.localPosition = new Vector3(0f, -220f - (160f * (buildCount - 5)), 0f);
         }
         moneyDisplay.text = moneyAmount.ToString();
 	}

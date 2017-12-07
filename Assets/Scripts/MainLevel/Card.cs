@@ -83,12 +83,12 @@ public class Card : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!drawn) {
-            transform.GetChild(4).gameObject.SetActive(true);
-		} else {
-            //GetComponent<Image> ().sprite = front;
-            transform.GetChild(4).gameObject.SetActive(false);
-        }
+		//if (!drawn) {
+  //          transform.GetChild(4).gameObject.SetActive(true);
+		//} else {
+  //          //GetComponent<Image> ().sprite = front;
+  //          transform.GetChild(4).gameObject.SetActive(false);
+  //      }
         helpHarmStat = CheckHelpStats(hairColour, shirtColour);
     }
 

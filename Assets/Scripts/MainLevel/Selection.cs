@@ -76,12 +76,14 @@ public class Selection : MonoBehaviour {
 	void OnEnable(){
 		Deck.onDraw += DeckToTable;
 		Card.onSample += TableToHand;
-	}
+    }
 
 	void OnDisable(){
 		Deck.onDraw -= DeckToTable;
 		Card.onSample -= TableToHand;
-	}
+    }
+
+    public GameObject GetCurrentCard() { return cardsToDraw[0].gameObject; }
 
     public void DeckToTable()
     {

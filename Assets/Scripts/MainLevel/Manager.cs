@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour {
     public float fMoney = 25f;
     public float fSR = 25f;
     public float fXP = 0f;
+    float xpLimit = 60f;
     float fPopulation = 1f;
     float fFood = 10f;
     float fNumBuilding = 0f;
@@ -69,6 +70,12 @@ public class Manager : MonoBehaviour {
         Build.onPurchase -= StatChange;
         Selection.canSample -= GetSRCurrently;
     }
+
+    public float GetMoneyCurrently() { return fMoney; }
+
+    public bool GetSRCurrently() { return fSR >= 10; }
+
+    public float GetPopulationCurrently() { return fPopulation; }
 
     void StatChange(string stat, float change)
     {
@@ -192,7 +199,7 @@ public class Manager : MonoBehaviour {
         srT.text = iSR.ToString();
 
         int iXP = (int)fXP;
-        xpT.text = iXP.ToString() + " / 60";
+        xpT.text = iXP.ToString() + " / " + xpLimit;
 
         //populationT.text = fPopulation.ToString();
         int iFood = (int)fFood;
@@ -217,12 +224,6 @@ public class Manager : MonoBehaviour {
         //}
         //gameTimeT.text = "Total Game Time:  " + timeS;
     }
-
-    public float GetMoneyCurrently() { return fMoney; }
-
-    public bool GetSRCurrently() { return fSR>= 10; }
-
-    public float GetPopulationCurrently() { return fPopulation; }
 
     IEnumerator OnWaitOff(GameObject gameThing)
     {
@@ -257,10 +258,11 @@ public class Manager : MonoBehaviour {
         SetMeters();
         Timer();
 
-        if(fXP >= 60)
+        if(fXP >= xpLimit)
         {
+            fXP -= xpLimit;
+            xpLimit *= 2f;
             StartCoroutine(OnWaitOff(levelUpNoti));
-            fXP -= 60f;
             StatChange("Time", 0f);
         }
 

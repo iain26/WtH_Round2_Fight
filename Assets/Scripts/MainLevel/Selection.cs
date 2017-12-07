@@ -129,6 +129,7 @@ public class Selection : MonoBehaviour {
                 //cardToHand.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
                 //onSample("Money", Random.Range(10, 25));
                 onSample("Population", 1f);
+                onSample("XP", 30f);
                 //onSample("Satisfaction", 0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
@@ -144,6 +145,7 @@ public class Selection : MonoBehaviour {
                     XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
                 //onSample("Money", Random.Range(5, 10));
                 onSample("Population", 1f);
+                onSample("XP", 30f);
                 //onSample("Satisfaction", -0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
@@ -185,10 +187,12 @@ public class Selection : MonoBehaviour {
 
     public void PickCard()
     {
-        if()
-        onSample("SR", -10);
-        GameObject.Find("Draw").transform.GetChild(0).GetComponent<Card>().DrawToHand();
-        deckClass.AddCardToDeck();
+        if (canSample())
+        {
+            onSample("SR", -10);
+            GameObject.Find("Draw").transform.GetChild(0).GetComponent<Card>().DrawToHand();
+            deckClass.AddCardToDeck();
+        }
     }
 
     // Update is called once per frame

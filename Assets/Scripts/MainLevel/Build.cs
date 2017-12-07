@@ -17,15 +17,21 @@ public class Build : MonoBehaviour {
 
     Manager mgr;
     Text moneyDisplay;
+    GameObject buildingGrid;
+    RawImage background;
 
     float moneyAmount = 100;
 
     bool waitForDrop = false;
 
+    float speed = 20f;
+
     // Use this for initialization
     void Start () {
         mgr = GameObject.Find("GameMgr").GetComponent<Manager>();
         moneyDisplay = GameObject.Find("MoneyAmountDisplay").GetComponent<Text>();
+        buildingGrid = GameObject.Find("BuildingGrid");
+        background = GameObject.Find("Canvas").GetComponent<RawImage>();
     }
 
     private void OnEnable()
@@ -59,12 +65,12 @@ public class Build : MonoBehaviour {
         if (mgr.GetMoneyCurrently() >= moneyAmount)
         {
             onPurchase("Money", -moneyAmount);
-            onPurchase("Time", 0f);
+            //onPurchase("Time", 0f);
             moneyAmount *= 2f;
             GameObject newFloor = GameObject.Instantiate(floorTemp);
             newFloor.name = "Floor " + buildCount;
             buildCount++;
-            newFloor.transform.SetParent(GameObject.Find("BuildingGrid").transform);
+            newFloor.transform.SetParent(buildingGrid.transform);
             newFloor.transform.localScale = new Vector3(1f, 1f, 1f);
             newFloor.transform.localPosition = new Vector3(0f, 0 + offset, 0f);
             offset += 160f;
@@ -79,7 +85,7 @@ public class Build : MonoBehaviour {
         {
             GameObject moneyDrop = GameObject.Instantiate(moneyCollectable);
             moneyDrop.name = "MoneyDrop";
-            moneyDrop.transform.SetParent(GameObject.Find("BuildingGrid").transform);
+            moneyDrop.transform.SetParent(GameObject.Find("DropParent").transform);
             moneyDrop.transform.localScale = new Vector3(1f, 1f, 1f);
             moneyDrop.transform.localPosition = new Vector3(0f, -69f, 0f);
         }
@@ -87,7 +93,7 @@ public class Build : MonoBehaviour {
         {
             GameObject srDrop = GameObject.Instantiate(srCollectable);
             srDrop.name = "SRDrop";
-            srDrop.transform.SetParent(GameObject.Find("BuildingGrid").transform);
+            srDrop.transform.SetParent(GameObject.Find("DropParent").transform);
             srDrop.transform.localScale = new Vector3(1f, 1f, 1f);
             srDrop.transform.localPosition = new Vector3(120f, -69f, 0f);
         }
@@ -102,6 +108,16 @@ public class Build : MonoBehaviour {
         {
             if (!waitForDrop)
                 StartCoroutine(DropResource());
+        }
+        if (buildCount > 5)
+        {
+            if(buildingGrid.transform.localPosition.y > -220f - (160f * (buildCount - 5)))
+            {
+                float timeLastFrame = Time.deltaTime;
+                background.uvRect = new Rect(0.07f, background.uvRect.y + Time.deltaTime * 0.0089f, 0.9f, 0.6f);
+                buildingGrid.transform.localPosition = new Vector3(0f, buildingGrid.transform.localPosition.y - (Time.deltaTime * speed), 0f);
+            }
+                //buildingGrid.transform.localPosition = new Vector3(0f, -220f - (160f * (buildCount - 5)), 0f);
         }
         moneyDisplay.text = moneyAmount.ToString();
 	}

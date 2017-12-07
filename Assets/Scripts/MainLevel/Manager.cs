@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour {
     public float fSatisfaction = 0.5f;
     public float fMoney = 25f;
     public float fSR = 25f;
+    public float fXP = 0f;
     float fPopulation = 1f;
     float fFood = 10f;
     float fNumBuilding = 0f;
@@ -15,6 +16,7 @@ public class Manager : MonoBehaviour {
     Image satisfactionIm;
     Text moneyT;
     Text srT;
+    Text xpT;
     Text populationT;
     Text foodT;
 
@@ -47,6 +49,8 @@ public class Manager : MonoBehaviour {
     float gameTimeSec = 0;
     float timeSec = 0;
 
+    public GameObject levelUpNoti;
+
     // Use this for initialization
     void Start () {
         IntialiseObjects();
@@ -56,12 +60,14 @@ public class Manager : MonoBehaviour {
     {
         Selection.onSample += StatChange;
         Build.onPurchase += StatChange;
+        Selection.canSample += GetSRCurrently;
     }
 
     private void OnDisable()
     {
         Selection.onSample -= StatChange;
         Build.onPurchase -= StatChange;
+        Selection.canSample -= GetSRCurrently;
     }
 
     void StatChange(string stat, float change)
@@ -76,6 +82,9 @@ public class Manager : MonoBehaviour {
                 break;
             case "SR":
                 fSR += change;
+                break;
+            case "XP":
+                fXP += change;
                 break;
             case "Food":
                 fFood += change;
@@ -109,7 +118,8 @@ public class Manager : MonoBehaviour {
         
         moneyT = GameObject.Find("Money").GetComponent<Text>();
         srT = GameObject.Find("SR").GetComponent<Text>();
-        populationT = GameObject.Find("Population").GetComponent<Text>();
+        //populationT = GameObject.Find("Population").GetComponent<Text>();
+        xpT = GameObject.Find("XP").GetComponent<Text>();
 
         //gameTimeT = GameObject.Find("GameTimeT").GetComponent<Text>();
     }
@@ -181,7 +191,10 @@ public class Manager : MonoBehaviour {
         int iSR = (int)fSR;
         srT.text = iSR.ToString();
 
-        populationT.text = fPopulation.ToString();
+        int iXP = (int)fXP;
+        xpT.text = iXP.ToString() + " / 60";
+
+        //populationT.text = fPopulation.ToString();
         int iFood = (int)fFood;
 
         string timeS;
@@ -207,49 +220,21 @@ public class Manager : MonoBehaviour {
 
     public float GetMoneyCurrently() { return fMoney; }
 
-    public float GetSRCurrently() { return fSR; }
+    public bool GetSRCurrently() { return fSR>= 10; }
 
     public float GetPopulationCurrently() { return fPopulation; }
 
-    //IEnumerator TakeAwayFood()
-    //{
-    //    if (waited)
-    //    {
-    //        waited = false;
-    //        yield return new WaitForSeconds(10f);
-    //        if (fSatisfaction > 0f)
-    //        {
-    //            if (fSatisfaction > 0.5f)
-    //            {
-    //                if (fSatisfaction > 0.7f)
-    //                {
-    //                    fFood -= 3.5f * fPopulation;
-    //                }
-    //                else
-    //                {
-    //                    fFood -= 2.25f * fPopulation;
-    //                }
-    //            }
-    //            else
-    //            {
-    //                fFood -= 1.5f * fPopulation;
-    //            }
-    //            if(fFood < 0)
-    //            {
-    //                starving = true;
-    //            }
-    //            else
-    //            {
-    //                starving = false;
-    //            }
-    //            if (fFood <= 0)
-    //            {
-    //                fFood = 0f;
-    //            }
-    //        }
-    //        waited = true;
-    //    }
-    //}
+    IEnumerator OnWaitOff(GameObject gameThing)
+    {
+        if (waited)
+        {
+            waited = false;
+            gameThing.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            gameThing.SetActive(false);
+            waited = true;
+        }
+    }
 
     void Timer()
     {
@@ -271,6 +256,13 @@ public class Manager : MonoBehaviour {
     {
         SetMeters();
         Timer();
+
+        if(fXP >= 60)
+        {
+            StartCoroutine(OnWaitOff(levelUpNoti));
+            fXP -= 60f;
+            StatChange("Time", 0f);
+        }
 
         if (samplingObject != null)
             samplingObject.SetActive(sampling);

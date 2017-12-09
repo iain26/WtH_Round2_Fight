@@ -33,7 +33,9 @@ public class Selection : MonoBehaviour {
     GameObject acceptedAlert;
 
     public float scale = 1.25f;
-    
+
+    int randObjective;
+
     float time = 1.25f;
 
     Deck deckClass;
@@ -47,8 +49,12 @@ public class Selection : MonoBehaviour {
     public delegate bool AbleToSample();
     public static event AbleToSample canSample;
 
+    public delegate void SetObjective();
+    public static event SetObjective setObj;
+
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         deckClass = GameObject.Find("GameMgr").GetComponent<Deck>();
 
         //sets positions cards can be on screen depending on screen size
@@ -120,7 +126,7 @@ public class Selection : MonoBehaviour {
         {
             if (cardToHand.helpHarmStat >= helpRandom)
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -132,12 +138,13 @@ public class Selection : MonoBehaviour {
                 //onSample("Money", Random.Range(10, 25));
                 onSample("Population", 1f);
                 onSample("XP", 30f);
+                setObj();
                 //onSample("Satisfaction", 0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
             else
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -147,7 +154,7 @@ public class Selection : MonoBehaviour {
                     XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
                 //onSample("Money", Random.Range(5, 10));
                 onSample("Population", 1f);
-                onSample("XP", 30f);
+                onSample("XP", 5);
                 //onSample("Satisfaction", -0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
@@ -156,7 +163,7 @@ public class Selection : MonoBehaviour {
             if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                 XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "True", "N/A", System.DateTime.Now.ToString());
             Handheld.Vibrate();
-            StartCoroutine(EnableWaitDisable(rejectedAlert, 1.667f));
+            StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(255f, 0f, 0f)));
             cardsInRejection.Add (cardToHand.GetComponent<Card> ());
 			cardToHand.gameObject.transform.position = rejectionPos;
 			cardToHand.gameObject.transform.SetParent (GameObject.Find ("Rejection").transform);
@@ -166,7 +173,7 @@ public class Selection : MonoBehaviour {
 		sampled = true;
 	}
 
-    IEnumerator EnableWaitDisable(GameObject alert, float time)
+    IEnumerator EnableWaitDisable(GameObject alert, float time, Color color)
     {
         if(alert.name == "RejectedAlert")
         {
@@ -177,6 +184,10 @@ public class Selection : MonoBehaviour {
 			source.PlayOneShot (accepted);
         }
         alert.SetActive(true);
+        for (int i = 0; i < alert.transform.childCount; i++)
+        {
+            alert.transform.GetChild(i).GetComponent<Image>().color = color;
+        }
         yield return new WaitForSeconds(time);
         alert.SetActive(false);
     }

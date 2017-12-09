@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlipCard : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class FlipCard : MonoBehaviour {
     bool frontface = true;
 
     Selection plyrMgr;
+
+    public Button flipButton;
 
     public delegate object FlipCurrentCard();
     public static event FlipCurrentCard onFlip;
@@ -43,7 +46,7 @@ public class FlipCard : MonoBehaviour {
                 flipSide = 180;
             }
             GameObject flipObject = plyrMgr.GetCurrentCard();
-            flipObject.transform.Rotate(Vector3.up * Time.deltaTime * 75);
+            flipObject.transform.Rotate(Vector3.up * Time.deltaTime * 150);
 
             if (flipObject.transform.localEulerAngles.y >= 0 && flipObject.transform.localEulerAngles.y <= 90)
             {
@@ -78,6 +81,7 @@ public class FlipCard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        flipButton.interactable = !bFlip;
         cardFlip();
 	}
 }

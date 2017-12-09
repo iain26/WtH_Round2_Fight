@@ -7,6 +7,12 @@ public class Card : MonoBehaviour {
 	public string hairColour;
 	public string skinColour;
 	public string shirtColour;
+    //public string Colour;
+    //public string skinColour;
+    //public string shirtColour;
+    //public string hairColour;
+    //public string skinColour;
+    //public string shirtColour;
 
     public int helpHarmStat;
     public string statToEffect;

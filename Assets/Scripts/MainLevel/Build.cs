@@ -20,7 +20,7 @@ public class Build : MonoBehaviour {
     GameObject buildingGrid;
     RawImage background;
 
-    float moneyAmount = 100;
+    float moneyAmount = 40;
 
     bool waitForDrop = false;
 
@@ -52,7 +52,7 @@ public class Build : MonoBehaviour {
         switch (resource)
         {
             case "Money":
-                fRandom = Random.Range(35 * buildCount, 40 * buildCount);
+                fRandom = Random.Range(30 * buildCount, 60 * buildCount);
                 onPurchase("Money", fRandom);
                 break;
             case "SR":

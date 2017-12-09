@@ -14,12 +14,16 @@ public class Manager : MonoBehaviour {
     float fFood = 10f;
     float fNumBuilding = 0f;
 
+    public List<string> objectives;
+
     Image satisfactionIm;
     Text moneyT;
     Text srT;
     Text xpT;
     Text populationT;
     Text foodT;
+
+    public Text ObjectiveT;
 
     public float speed = 1f;
 
@@ -48,18 +52,28 @@ public class Manager : MonoBehaviour {
     Text gameTimeT;
     int gameTimeMin = 0;
     float gameTimeSec = 0;
+    float gameTimeSecLimit = 60;
     float timeSec = 0;
+
+    int randObjective;
 
     public GameObject levelUpNoti;
 
     // Use this for initialization
     void Start () {
+        randObjective = Random.Range(0, objectives.Count);
         IntialiseObjects();
+    }
+
+    void SetObjectiveRandomly()
+    {
+        randObjective = Random.Range(0, objectives.Count);
     }
 
     private void OnEnable()
     {
         Selection.onSample += StatChange;
+        Selection.setObj += SetObjectiveRandomly;
         Build.onPurchase += StatChange;
         Selection.canSample += GetSRCurrently;
     }
@@ -67,6 +81,7 @@ public class Manager : MonoBehaviour {
     private void OnDisable()
     {
         Selection.onSample -= StatChange;
+        Selection.setObj -= SetObjectiveRandomly;
         Build.onPurchase -= StatChange;
         Selection.canSample -= GetSRCurrently;
     }
@@ -206,15 +221,15 @@ public class Manager : MonoBehaviour {
 
         string timeS;
         gameTimeSec += Time.deltaTime;
-        if (gameTimeSec >= 60)
+        if (gameTimeSec >= gameTimeSecLimit)
         {
-            gameTimeSec -= 60;
-            if(gameTimeSec < 60)
+            gameTimeSec -= gameTimeSecLimit;
+            if(gameTimeSec < gameTimeSecLimit)
             {
                 gameTimeMin++;
             }
         }
-        float displayTime = timeSec/60f;
+        float displayTime = timeSec/ gameTimeSecLimit;
         GameObject.Find("TimeFillBar").GetComponent<Image>().fillAmount = 1f - displayTime;
         //int gameTimeSecInt = (int)gameTimeSec;
         //timeS = gameTimeMin.ToString() + ":" + gameTimeSecInt.ToString();
@@ -257,6 +272,8 @@ public class Manager : MonoBehaviour {
     {
         SetMeters();
         Timer();
+
+        ObjectiveT.text = "Objective: Find " + objectives[randObjective];
 
         if(fXP >= xpLimit)
         {

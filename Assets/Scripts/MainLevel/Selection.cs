@@ -151,7 +151,7 @@ public class Selection : MonoBehaviour {
                 cardToHand.gameObject.GetComponent<Button>().enabled = false;
                 handOffset += offsetIncre;
                 if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
-                    XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
+                    XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Harmed", System.DateTime.Now.ToString());
                 //onSample("Money", Random.Range(5, 10));
                 onSample("Population", 1f);
                 onSample("XP", 5);

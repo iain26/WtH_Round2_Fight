@@ -34,6 +34,7 @@ public class Build : MonoBehaviour {
         moneyDisplay = GameObject.Find("MoneyAmountDisplay").GetComponent<Text>();
         buildingGrid = GameObject.Find("BuildingGrid");
         background = GameObject.Find("Canvas").GetComponent<RawImage>();
+        BuildFloor();
     }
 
     private void OnEnable()
@@ -90,7 +91,7 @@ public class Build : MonoBehaviour {
             moneyDrop.name = "MoneyDrop";
             moneyDrop.transform.SetParent(GameObject.Find("DropParent").transform);
             moneyDrop.transform.localScale = new Vector3(1f, 1f, 1f);
-            moneyDrop.transform.localPosition = new Vector3(0f, -69f, 0f);
+            moneyDrop.transform.localPosition = new Vector3(Random.Range(-255f, 255f), -69f, 0f);
         }
         else
         {
@@ -99,7 +100,7 @@ public class Build : MonoBehaviour {
             srDrop.name = "SRDrop";
             srDrop.transform.SetParent(GameObject.Find("DropParent").transform);
             srDrop.transform.localScale = new Vector3(1f, 1f, 1f);
-            srDrop.transform.localPosition = new Vector3(120f, -69f, 0f);
+            srDrop.transform.localPosition = new Vector3(Random.Range(-255f, 255f), -69f, 0f);
         }
         waitForDrop = false;
         yield return 0;

@@ -49,6 +49,9 @@ public class Selection : MonoBehaviour {
     public delegate bool AbleToSample();
     public static event AbleToSample canSample;
 
+    public delegate int HarmOrHelp(Card cardToCheck);
+    public static event HarmOrHelp helpChance;
+
     public delegate void SetObjective();
     public static event SetObjective setObj;
 
@@ -61,7 +64,6 @@ public class Selection : MonoBehaviour {
         offsetIncre = ((float)Screen.width / 6.8f) * 1.2f;
         InitialisePositions();
 		cardsToDraw = deckClass.deck;
-        //DeckToTable();
 
         rejectedAlert = GameObject.Find("RejectedAlert");
         acceptedAlert = GameObject.Find("AcceptedAlert");
@@ -93,19 +95,15 @@ public class Selection : MonoBehaviour {
 
     public void DeckToTable()
     {
-        //StartCoroutine(MoveCard(card, handPos));
         if (sampled)
         {
-            // onAction("Drew Cards");
             sampled = false;
             for (int i = 0; i < 5; i++)
             {
-                //cardsOnTable.Add(cardsToDraw[(cardsToDraw.Count - 1)]);
                 cardsOnTable = cardsToDraw;
                 cardsToDraw.Remove(cardsToDraw[(cardsToDraw.Count - 1)]);
                 drawnCards++;
             }
-            //offset = 0f;
         }
     }
 
@@ -124,7 +122,7 @@ public class Selection : MonoBehaviour {
         int helpRandom = Random.Range(1, 10);
         if (rejectRandom > 0)
         {
-            if (cardToHand.helpHarmStat >= helpRandom)
+            if (helpChance(cardToHand) >= helpRandom)
             {
                 StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f), false));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
@@ -134,12 +132,9 @@ public class Selection : MonoBehaviour {
                 handOffset += offsetIncre;
                 if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                     XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
-                //cardToHand.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
-                //onSample("Money", Random.Range(10, 25));
                 onSample("Population", 1f);
                 onSample("XP", 30f);
                 setObj();
-                //onSample("Satisfaction", 0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
             else
@@ -152,10 +147,8 @@ public class Selection : MonoBehaviour {
                 handOffset += offsetIncre;
                 if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                     XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Harmed", System.DateTime.Now.ToString());
-                //onSample("Money", Random.Range(5, 10));
                 onSample("Population", 1f);
                 onSample("XP", 5);
-                //onSample("Satisfaction", -0.05f);
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
 		} else
@@ -163,7 +156,7 @@ public class Selection : MonoBehaviour {
             if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                 XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "True", "N/A", System.DateTime.Now.ToString());
             Handheld.Vibrate();
-            StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(255f, 0f, 0f), true));
+            StartCoroutine(EnableWaitDisable(rejectedAlert, time, new Color(255f, 0f, 0f), true));
             cardsInRejection.Add (cardToHand.GetComponent<Card> ());
 			cardToHand.gameObject.transform.position = rejectionPos;
 			cardToHand.gameObject.transform.SetParent (GameObject.Find ("Rejection").transform);
@@ -228,7 +221,6 @@ public class Selection : MonoBehaviour {
                 }
             }
         }
-		//CheckWin ();
 
 		//checks screen width each frame and 
 		offsetIncre = ((float)Screen.width / 6.8f) * 1.2f;

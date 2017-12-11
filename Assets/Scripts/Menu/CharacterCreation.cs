@@ -88,25 +88,25 @@ public class CharacterCreation : MonoBehaviour {
         }
 
         if (hair[hairIndex].name.Contains("BLUE"))
-            GetComponent<Card>().hairColour = "Cyan";
+            GetComponent<Card>().hairColour = ;
         if (hair[hairIndex].name.Contains("GREEN"))
-            GetComponent<Card>().hairColour = "Green";
+            GetComponent<Card>().hairColour = "2";
         if (hair[hairIndex].name.Contains("PINK"))
-            GetComponent<Card>().hairColour = "Pink";
+            GetComponent<Card>().hairColour = "2";
 
         if (shirt[shirtIndex].name.Contains("BLUE"))
-            GetComponent<Card>().shirtColour = "Blue";
+            GetComponent<Card>().shirtColour = "a";
         if (shirt[shirtIndex].name.Contains("GREEN"))
-            GetComponent<Card>().shirtColour = "Green";
+            GetComponent<Card>().shirtColour = "b";
         if (shirt[shirtIndex].name.Contains("RED"))
-            GetComponent<Card>().shirtColour = "Red";
+            GetComponent<Card>().shirtColour = "c";
 
         if (skin[skinIndex].name.Contains("BLACK"))
-            GetComponent<Card>().skinColour = "Black";
+            GetComponent<Card>().skinColour = "a";
         if (skin[skinIndex].name.Contains("TAN"))
-            GetComponent<Card>().skinColour = "Tan";
+            GetComponent<Card>().skinColour = "b";
         if (skin[skinIndex].name.Contains("WHITE"))
-            GetComponent<Card>().skinColour = "White";
+            GetComponent<Card>().skinColour = "c";
 
 
     }

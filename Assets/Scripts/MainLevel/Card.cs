@@ -29,56 +29,6 @@ public class Card : MonoBehaviour {
 	void Start () {
         
     }
-
-    public int CheckHelpStats(string trait1, string trait2)
-    {
-        switch (trait1)
-        {
-            case "1":
-                switch (trait2)
-                {
-                    case "1":
-                        return 9;
-                        break;
-                    case "2":
-                        return 7;
-                        break;
-                    case "3":
-                        return 5;
-                        break;
-                }
-                break;
-            case "2":
-                switch (trait2)
-                {
-                    case "1":
-                        return 7;
-                        break;
-                    case "2":
-                        return 5;
-                        break;
-                    case "3":
-                        return 3;
-                        break;
-                }
-                break;
-            case "3":
-                switch (trait2)
-                {
-                    case "1":
-                        return 5;
-                        break;
-                    case "2":
-                        return 3;
-                        break;
-                    case "3":
-                        return 1;
-                        break;
-                }
-                break;
-        }
-        return 0;
-    }
 	
 	// Update is called once per frame
 	void Update () {

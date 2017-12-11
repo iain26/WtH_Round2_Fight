@@ -59,11 +59,55 @@ public class Manager : MonoBehaviour {
 
     public GameObject levelUpNoti;
 
+    Card cardToCheck;
+
+    delegate string MatrixValues();
+    MatrixValues firstElement;
+    MatrixValues secondElement;
+
     // Use this for initialization
-    void Start () {
+    void Start() {
         randObjective = Random.Range(0, objectives.Count);
         IntialiseObjects();
+        int rand1 = Random.Range(0, 3);
+        int rand2;
+        do
+        {
+            rand2 = Random.Range(0, 3);
+            print(rand1 + "  " + rand2);
+        } while (rand1 == rand2);
+        switch (rand1)
+        {
+            case 0:
+                print("hair");
+                firstElement = new MatrixValues(CheckHair);
+                break;
+            case 1:
+                print("shirt");
+                firstElement = new MatrixValues(CheckShirt);
+                break;
+            case 2:
+                print("skin");
+                firstElement = new MatrixValues(CheckSkin);
+                break;
+        }
+        switch (rand2)
+        {
+            case 0:
+                print("hair");
+                secondElement = new MatrixValues(CheckHair);
+                break;
+            case 1:
+                print("shirt");
+                secondElement = new MatrixValues(CheckShirt);
+                break;
+            case 2:
+                print("skin");
+                secondElement = new MatrixValues(CheckSkin);
+                break;
+        }
     }
+    
 
     void SetObjectiveRandomly()
     {
@@ -76,6 +120,7 @@ public class Manager : MonoBehaviour {
         Selection.setObj += SetObjectiveRandomly;
         Build.onPurchase += StatChange;
         Selection.canSample += GetSRCurrently;
+        Selection.helpChance += CheckHelpChance;
     }
 
     private void OnDisable()
@@ -84,6 +129,73 @@ public class Manager : MonoBehaviour {
         Selection.setObj -= SetObjectiveRandomly;
         Build.onPurchase -= StatChange;
         Selection.canSample -= GetSRCurrently;
+        Selection.helpChance -= CheckHelpChance;
+    }
+
+    string CheckHair()
+    {
+        return cardToCheck.hairColour;
+    }
+
+    string CheckShirt()
+    {
+        return cardToCheck.hairColour;
+    }
+
+    string CheckSkin()
+    {
+        return cardToCheck.hairColour;
+    }
+
+    int CheckHelpChance(Card currentCard)
+    {
+        cardToCheck = currentCard;
+        switch (firstElement())
+        {
+            case "1":
+                switch (secondElement())
+                {
+                    case "1":
+                        return 9;
+                        break;
+                    case "2":
+                        return 7;
+                        break;
+                    case "3":
+                        return 5;
+                        break;
+                }
+                break;
+            case "2":
+                switch (secondElement())
+                {
+                    case "1":
+                        return 7;
+                        break;
+                    case "2":
+                        return 5;
+                        break;
+                    case "3":
+                        return 3;
+                        break;
+                }
+                break;
+            case "3":
+                switch (secondElement())
+                {
+                    case "1":
+                        return 5;
+                        break;
+                    case "2":
+                        return 3;
+                        break;
+                    case "3":
+                        return 1;
+                        break;
+                }
+                break; 
+        }
+        return 0;
     }
 
     public float GetMoneyCurrently() { return fMoney; }

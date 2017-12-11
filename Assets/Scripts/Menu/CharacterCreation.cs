@@ -16,6 +16,8 @@ public class CharacterCreation : MonoBehaviour {
     GameObject shirtObject;
     public int shirtIndex;
 
+    //public List<string>
+
     int typeIndex = 0;
 
     public bool userControlled = false;
@@ -95,9 +97,18 @@ public class CharacterCreation : MonoBehaviour {
         if (shirt[shirtIndex].name.Contains("BLUE"))
             GetComponent<Card>().shirtColour = "Blue";
         if (shirt[shirtIndex].name.Contains("GREEN"))
-            GetComponent<Card>().shirtColour = "Orange";
+            GetComponent<Card>().shirtColour = "Green";
         if (shirt[shirtIndex].name.Contains("RED"))
-            GetComponent<Card>().shirtColour = "Yellow";
+            GetComponent<Card>().shirtColour = "Red";
+
+        if (skin[skinIndex].name.Contains("BLACK"))
+            GetComponent<Card>().skinColour = "Black";
+        if (skin[skinIndex].name.Contains("TAN"))
+            GetComponent<Card>().skinColour = "Tan";
+        if (skin[skinIndex].name.Contains("WHITE"))
+            GetComponent<Card>().skinColour = "White";
+
+
     }
 
     public void HairRight()

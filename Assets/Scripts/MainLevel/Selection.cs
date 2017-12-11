@@ -6,8 +6,8 @@ using System.Collections.Generic;
 public class Selection : MonoBehaviour {
 
 	public AudioSource source;
-	public AudioClip accepted;
-	public AudioClip rejected;
+	public AudioClip acceptedClip;
+	public AudioClip rejectedClip;
 
 	float offset = 0f;
 	float handOffset = 0f;
@@ -126,7 +126,7 @@ public class Selection : MonoBehaviour {
         {
             if (cardToHand.helpHarmStat >= helpRandom)
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f), false));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -144,7 +144,7 @@ public class Selection : MonoBehaviour {
             }
             else
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f), false));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -163,7 +163,7 @@ public class Selection : MonoBehaviour {
             if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                 XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "True", "N/A", System.DateTime.Now.ToString());
             Handheld.Vibrate();
-            StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(255f, 0f, 0f)));
+            StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(255f, 0f, 0f), true));
             cardsInRejection.Add (cardToHand.GetComponent<Card> ());
 			cardToHand.gameObject.transform.position = rejectionPos;
 			cardToHand.gameObject.transform.SetParent (GameObject.Find ("Rejection").transform);
@@ -173,15 +173,15 @@ public class Selection : MonoBehaviour {
 		sampled = true;
 	}
 
-    IEnumerator EnableWaitDisable(GameObject alert, float time, Color color)
+    IEnumerator EnableWaitDisable(GameObject alert, float time, Color color, bool rejected)
     {
-        if(alert.name == "RejectedAlert")
+        if(rejected)
         {
-			source.PlayOneShot (rejected);
+			source.PlayOneShot (rejectedClip);
         }
-        if (alert.name == "AcceptedAlert")
+        if (!rejected)
         {
-			source.PlayOneShot (accepted);
+			source.PlayOneShot (acceptedClip);
         }
         alert.SetActive(true);
         for (int i = 0; i < alert.transform.childCount; i++)

@@ -162,17 +162,21 @@ public class Manager : MonoBehaviour {
 
     public void Building()
     {
-        BuildingButton.SetActive(false);
-        samplingButton.SetActive(true);
         if (!building)
         {
             analysing = false;
             sampling = false;
             building = true;
+
+            BuildingButton.SetActive(false);
+            samplingButton.SetActive(true);
         }
         else
         {
             building = false;
+
+            BuildingButton.SetActive(true);
+            samplingButton.SetActive(false);
         }
     }
 
@@ -185,10 +189,18 @@ public class Manager : MonoBehaviour {
             analysing = false;
             building = false;
             sampling = true;
+
+
+            samplingButton.SetActive(false);
+            BuildingButton.SetActive(true);
         }
         else
         {
             sampling = false;
+            building = true;
+
+            samplingButton.SetActive(true);
+            BuildingButton.SetActive(false);
         }
     }
 

@@ -1456,7 +1456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &247746692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3770,7 +3770,7 @@ GameObject:
   - component: {fileID: 683581285}
   - component: {fileID: 683581284}
   m_Layer: 0
-  m_Name: Female 2 BROWN
+  m_Name: Female 2 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4335,7 +4335,7 @@ GameObject:
   - component: {fileID: 795244622}
   - component: {fileID: 795244621}
   m_Layer: 0
-  m_Name: Male 1 BROWN
+  m_Name: Male 1 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4519,7 +4519,7 @@ GameObject:
   - component: {fileID: 833228631}
   - component: {fileID: 833228630}
   m_Layer: 0
-  m_Name: Female 1 BROWN
+  m_Name: Female 1 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6317,7 +6317,7 @@ GameObject:
   - component: {fileID: 1150646857}
   - component: {fileID: 1150646856}
   m_Layer: 0
-  m_Name: Female 3 BROWN
+  m_Name: Female 3 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9331,7 +9331,7 @@ GameObject:
   - component: {fileID: 1565953709}
   - component: {fileID: 1565953708}
   m_Layer: 0
-  m_Name: Male 3 BROWN
+  m_Name: Male 3 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11072,7 +11072,7 @@ GameObject:
   - component: {fileID: 1907426845}
   - component: {fileID: 1907426844}
   m_Layer: 0
-  m_Name: Male 2 BROWN
+  m_Name: Male 2 TAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

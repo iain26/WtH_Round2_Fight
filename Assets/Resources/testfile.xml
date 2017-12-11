@@ -1,3 +1,308 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Data>
+  <Playthrough ID="#1" />
+  <Playthrough ID="#2">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:48:14 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>9</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:48:15 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>5</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:48:17 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="4">
+      <HelpChance>7</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Helped</Helpedorharmed>
+      <Timestamp>12/10/2017 9:48:56 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="5">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:04 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="6">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:05 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="7">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:05 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="8">
+      <HelpChance>7</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:08 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="9">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:08 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="10">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:22 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="11">
+      <HelpChance>9</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:23 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="12">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:23 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="13">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:23 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="14">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:24 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="15">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:24 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="16">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:24 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="17">
+      <HelpChance>9</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Helped</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:25 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="18">
+      <HelpChance>7</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Helped</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:27 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="19">
+      <HelpChance>5</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:28 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="20">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:30 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="21">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:42 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="22">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:44 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="23">
+      <HelpChance>9</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Helped</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:46 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="24">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:48 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="25">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:50 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="26">
+      <HelpChance>5</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:51 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="27">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 9:49:52 PM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#3" />
+  <Playthrough ID="#4" />
+  <Playthrough ID="#5" />
+  <Playthrough ID="#6" />
+  <Playthrough ID="#7" />
+  <Playthrough ID="#8">
+    <Dataset ID="1">
+      <HelpChance>5</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Helped</Helpedorharmed>
+      <Timestamp>12/10/2017 10:42:29 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>5</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/10/2017 10:42:29 PM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>7</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/10/2017 10:42:30 PM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#9" />
+  <Playthrough ID="#10" />
+  <Playthrough ID="#11" />
+  <Playthrough ID="#12">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:56:44 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:56:47 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:56:49 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="4">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:57:12 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="5">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:57:13 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="6">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/11/2017 1:57:16 AM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#13">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:58:12 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:58:14 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/11/2017 1:58:15 AM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#14">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 1:58:37 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/11/2017 1:58:38 AM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#15">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:17 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:18 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:21 AM</Timestamp>
+    </Dataset>
+  </Playthrough>
+  <Playthrough ID="#16">
+    <Dataset ID="1">
+      <HelpChance>0</HelpChance>
+      <Rejected>True</Rejected>
+      <Helpedorharmed>N/A</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:46 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="2">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:47 AM</Timestamp>
+    </Dataset>
+    <Dataset ID="3">
+      <HelpChance>0</HelpChance>
+      <Rejected>False</Rejected>
+      <Helpedorharmed>Harmed</Helpedorharmed>
+      <Timestamp>12/11/2017 2:04:48 AM</Timestamp>
+    </Dataset>
+  </Playthrough>
 </Data>

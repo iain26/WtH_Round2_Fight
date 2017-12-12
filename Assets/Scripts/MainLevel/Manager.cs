@@ -74,7 +74,6 @@ public class Manager : MonoBehaviour {
         do
         {
             rand2 = Random.Range(0, 3);
-            print(rand1 + "  " + rand2);
         } while (rand1 == rand2);
         switch (rand1)
         {
@@ -139,12 +138,12 @@ public class Manager : MonoBehaviour {
 
     string CheckShirt()
     {
-        return cardToCheck.hairColour;
+        return cardToCheck.shirtColour;
     }
 
     string CheckSkin()
     {
-        return cardToCheck.hairColour;
+        return cardToCheck.skinColour;
     }
 
     int CheckHelpChance(Card currentCard)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterCreation : MonoBehaviour {
 
@@ -24,6 +25,10 @@ public class CharacterCreation : MonoBehaviour {
 
     GameObject gameData;
     DontDestroy data;
+
+    public Sprite grapefuit;
+    public Sprite watermelon;
+    public Sprite banana;
 
     //public bool showBackOfCard = true;
 
@@ -59,20 +64,63 @@ public class CharacterCreation : MonoBehaviour {
         }
         shirtIndex = Random.Range(0, shirt.Count);
         shirt[shirtIndex].SetActive(true);
+
+        int randFaction = Random.Range(0, 3);
+        int randEducation = Random.Range(0, 3);
+        int randOccupation = Random.Range(0, 3);
+
+        switch (randFaction)
+        {
+            case 0:
+                transform.GetChild(4).GetChild(0).GetComponent<Image>().sprite = grapefuit;
+                transform.GetChild(4).GetChild(1).GetComponent<Text>().text = "Grapefruit Guardians";
+                break;
+            case 1:
+                transform.GetChild(4).GetChild(0).GetComponent<Image>().sprite = watermelon;
+                transform.GetChild(4).GetChild(1).GetComponent<Text>().text = "Watermelon Warriors";
+                break;
+            case 2:
+                transform.GetChild(4).GetChild(0).GetComponent<Image>().sprite = banana;
+                transform.GetChild(4).GetChild(1).GetComponent<Text>().text = "Banana Bandits";
+                break;
+        }
+
+        switch (randEducation)
+        {
+            case 0:
+                transform.GetChild(4).GetChild(2).GetComponent<Text>().text = "High School Graduate";
+                break;
+            case 1:
+                transform.GetChild(4).GetChild(2).GetComponent<Text>().text = "College Degree";
+                break;
+            case 2:
+                transform.GetChild(4).GetChild(2).GetComponent<Text>().text = "PhD";
+                break;
+        }
+        switch (randOccupation)
+        {
+            case 0:
+                transform.GetChild(4).GetChild(3).GetComponent<Text>().text = "Journalist";
+                break;
+            case 1:
+                transform.GetChild(4).GetChild(3).GetComponent<Text>().text = "Emergency Services";
+                break;
+            case 2:
+                transform.GetChild(4).GetChild(3).GetComponent<Text>().text = "Retired";
+                break;
+        }
+        transform.GetChild(4).gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        data.characterHair = hairIndex;
-        data.characterSkin = skinIndex;
-        data.characterShirt = shirtIndex;
-
         if (userControlled)
         {
-                    Select(hair, hairIndex, "Hair");
-                    Select(skin, skinIndex, "Skin");
-                    Select(shirt, shirtIndex, "Shirt");
+            data.characterHair = hairIndex;
+            data.characterSkin = skinIndex;
+            data.characterShirt = shirtIndex;
+
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 typeIndex--;
@@ -87,26 +135,31 @@ public class CharacterCreation : MonoBehaviour {
                 typeIndex = 2;
         }
 
+
+        Select(hair, hairIndex, "Hair");
+        Select(skin, skinIndex, "Skin");
+        Select(shirt, shirtIndex, "Shirt");
+
         if (hair[hairIndex].name.Contains("BLUE"))
-            GetComponent<Card>().hairColour = ;
+            GetComponent<Card>().hairColour = "1";
         if (hair[hairIndex].name.Contains("GREEN"))
             GetComponent<Card>().hairColour = "2";
         if (hair[hairIndex].name.Contains("PINK"))
-            GetComponent<Card>().hairColour = "2";
+            GetComponent<Card>().hairColour = "3";
 
         if (shirt[shirtIndex].name.Contains("BLUE"))
-            GetComponent<Card>().shirtColour = "a";
+            GetComponent<Card>().shirtColour = "1";
         if (shirt[shirtIndex].name.Contains("GREEN"))
-            GetComponent<Card>().shirtColour = "b";
+            GetComponent<Card>().shirtColour = "2";
         if (shirt[shirtIndex].name.Contains("RED"))
-            GetComponent<Card>().shirtColour = "c";
+            GetComponent<Card>().shirtColour = "3";
 
         if (skin[skinIndex].name.Contains("BLACK"))
-            GetComponent<Card>().skinColour = "a";
+            GetComponent<Card>().skinColour = "1";
         if (skin[skinIndex].name.Contains("TAN"))
-            GetComponent<Card>().skinColour = "b";
+            GetComponent<Card>().skinColour = "2";
         if (skin[skinIndex].name.Contains("WHITE"))
-            GetComponent<Card>().skinColour = "c";
+            GetComponent<Card>().skinColour = "3";
 
 
     }

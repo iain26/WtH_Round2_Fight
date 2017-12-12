@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Build : MonoBehaviour {
 
+    public AudioSource source;
+    public AudioClip buy;
+
     int buildCount = 0;
     float offset = 0;
 
@@ -69,6 +72,8 @@ public class Build : MonoBehaviour {
         {
             onPurchase("Money", -moneyAmount);
             //onPurchase("Time", 0f);
+            if(buildCount > 0)
+            source.PlayOneShot(buy);
             moneyAmount *= 2f;
             GameObject newFloor = GameObject.Instantiate(floorTemp);
             newFloor.name = "Floor " + buildCount;

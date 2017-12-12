@@ -40,6 +40,8 @@ public class Selection : MonoBehaviour {
 
     Deck deckClass;
 
+    DontDestroy playerData;
+
     //public delegate void SaveToExternal(string actionPerformed);
     //public static event SaveToExternal onAction;
 
@@ -59,6 +61,8 @@ public class Selection : MonoBehaviour {
     void Start ()
     {
         deckClass = GameObject.Find("GameMgr").GetComponent<Deck>();
+
+        playerData = GameObject.Find("GameData").GetComponent<DontDestroy>();
 
         //sets positions cards can be on screen depending on screen size
         offsetIncre = ((float)Screen.width / 6.8f) * 1.2f;
@@ -118,13 +122,27 @@ public class Selection : MonoBehaviour {
 	}
 
 	void TableToHand(Card cardToHand){
-		int rejectRandom = Random.Range (0, 3);
+        int commonTraits = 3;
+        if( cardToHand.GetComponent<CharacterCreation>().hairIndex == playerData.characterHair)
+        {
+            commonTraits++;
+        }
+        if (cardToHand.GetComponent<CharacterCreation>().shirtIndex == playerData.characterShirt)
+        {
+            commonTraits++;
+        }
+        if (cardToHand.GetComponent<CharacterCreation>().skinIndex == playerData.characterSkin)
+        {
+            commonTraits++;
+        }
+        print(commonTraits);
+        int rejectRandom = Random.Range (0, commonTraits);
         int helpRandom = Random.Range(1, 10);
         if (rejectRandom > 0)
         {
             if (helpChance(cardToHand) >= helpRandom)
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f), false));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -139,7 +157,7 @@ public class Selection : MonoBehaviour {
             }
             else
             {
-                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f), false));
+                StartCoroutine(EnableWaitDisable(acceptedAlert, time, new Color(0f, 213f, 255f)));
                 cardsInHand.Add(cardToHand.GetComponent<Card>());
                 cardToHand.gameObject.transform.position = new Vector3(handPos.x + handOffset, handPos.y, 0f);
                 cardToHand.gameObject.transform.SetParent(GameObject.Find("Hand").transform);
@@ -156,7 +174,7 @@ public class Selection : MonoBehaviour {
             if (GameObject.Find("GameMgr").GetComponent<XMLWritinger>().isActiveAndEnabled)
                 XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "True", "N/A", System.DateTime.Now.ToString());
             Handheld.Vibrate();
-            StartCoroutine(EnableWaitDisable(rejectedAlert, time, new Color(255f, 0f, 0f), true));
+            StartCoroutine(EnableWaitDisable(rejectedAlert, time, new Color(255f, 0f, 0f)));
             cardsInRejection.Add (cardToHand.GetComponent<Card> ());
 			cardToHand.gameObject.transform.position = rejectionPos;
 			cardToHand.gameObject.transform.SetParent (GameObject.Find ("Rejection").transform);
@@ -166,22 +184,27 @@ public class Selection : MonoBehaviour {
 		sampled = true;
 	}
 
-    IEnumerator EnableWaitDisable(GameObject alert, float time, Color color, bool rejected)
+    IEnumerator EnableWaitDisable(GameObject alert, float time, Color color)
     {
-        if(rejected)
-        {
-			source.PlayOneShot (rejectedClip);
-        }
-        if (!rejected)
-        {
-			source.PlayOneShot (acceptedClip);
-        }
         alert.SetActive(true);
-        for (int i = 0; i < alert.transform.childCount; i++)
+        for (int i = 0; i < 4; i++)
         {
             alert.transform.GetChild(i).GetComponent<Image>().color = color;
         }
+        if (alert.name == "RejectedAlert")
+        {
+			source.PlayOneShot (rejectedClip);
+            alert.transform.GetChild(4).gameObject.SetActive(true);
+        }
+        if (alert.name == "AcceptedAlert")
+        {
+			source.PlayOneShot (acceptedClip);
+        }
         yield return new WaitForSeconds(time);
+        if (alert.name == "RejectedAlert")
+        {
+            alert.transform.GetChild(4).gameObject.SetActive(false);
+        }
         alert.SetActive(false);
     }
 

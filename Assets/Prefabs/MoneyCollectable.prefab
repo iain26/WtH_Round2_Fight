@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114806645086525858}
   - component: {fileID: 114178268644504452}
   - component: {fileID: 114904573890899000}
+  - component: {fileID: 95603260528425986}
   m_Layer: 5
   m_Name: MoneyCollectable
   m_TagString: Untagged
@@ -47,6 +48,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!95 &95603260528425986
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423865476032808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d4f3bd223dabea4799b9491e295eaf8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114178268644504452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3893aa8e30d3de4fb5178c952278b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  collect: {fileID: 8300000, guid: 1a7ff1e60aff3144e9721a94bf137512, type: 3}
 --- !u!222 &222512188674264496
 CanvasRenderer:
   m_ObjectHideFlags: 1

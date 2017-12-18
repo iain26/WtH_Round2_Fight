@@ -4,71 +4,51 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Manager : MonoBehaviour {
-
-    public float fSatisfaction = 0.5f;
+    
+    //stats to increment and decrease to affect gameplay
     public float fMoney = 25f;
     public float fSR = 25f;
     public float fXP = 0f;
     float xpLimit = 60f;
     float fPopulation = 1f;
-    float fFood = 10f;
-    float fNumBuilding = 0f;
-
-    public List<string> objectives;
-
-    Image satisfactionIm;
+    //the text in game to display stats above
     Text moneyT;
     Text srT;
     Text xpT;
-    Text populationT;
-    Text foodT;
-
-    public Text ObjectiveT;
-
-    public float speed = 1f;
-
+    //sampling menu check and menu itself as well as button to select button
     bool sampling = false;
-
     GameObject samplingObject;
     GameObject samplingButton;
-
+    //building menu check and menu itself as well as button to select button
     bool building = true;
-
     GameObject buildingMenuObject;
     GameObject BuildingButton;
-
-    bool analysing = false;
-
-    GameObject censusMenuObject;
-
+    //building menu check and menu itself
     bool quitting = false;
-
     GameObject QuittingComfirmationObject;
-
+    //check to see if coroutine has run only once 
     bool waited = true;
-
-    bool starving = false;
-
-    Text gameTimeT;
-    int gameTimeMin = 0;
-    float gameTimeSec = 0;
+    //time limit for round and the current time 
     float gameTimeSecLimit = 60;
     float timeSec = 0;
-
-    int randObjective;
-
+    //leveled up notification if exceeded xp limit 
     public GameObject levelUpNoti;
-
+    //current card displayed to player
     Card cardToCheck;
-
+    //used to store what sring value to reference when creating the matrix table
     delegate string MatrixValues();
     MatrixValues firstElement;
     MatrixValues secondElement;
 
     // Use this for initialization
     void Start() {
-        randObjective = Random.Range(0, objectives.Count);
         IntialiseObjects();
+        RandomiseMatrix();
+    }
+
+    void RandomiseMatrix()
+    {
+        //yup you guessed it randomises the matrix header elements and makes sure the two elements cant be the same
         int rand1 = Random.Range(0, 3);
         int rand2;
         do
@@ -106,17 +86,11 @@ public class Manager : MonoBehaviour {
                 break;
         }
     }
-    
 
-    void SetObjectiveRandomly()
-    {
-        randObjective = Random.Range(0, objectives.Count);
-    }
-
+    //listeners for events from sources in other scripts and if necessary returns value to origin script
     private void OnEnable()
     {
         Selection.onSample += StatChange;
-        Selection.setObj += SetObjectiveRandomly;
         Build.onPurchase += StatChange;
         Selection.canSample += GetSRCurrently;
         Selection.helpChance += CheckHelpChance;
@@ -125,12 +99,12 @@ public class Manager : MonoBehaviour {
     private void OnDisable()
     {
         Selection.onSample -= StatChange;
-        Selection.setObj -= SetObjectiveRandomly;
         Build.onPurchase -= StatChange;
         Selection.canSample -= GetSRCurrently;
         Selection.helpChance -= CheckHelpChance;
     }
 
+    //methods for returning strings from the card object displayed to player
     string CheckHair()
     {
         return cardToCheck.hairColour;
@@ -146,9 +120,12 @@ public class Manager : MonoBehaviour {
         return cardToCheck.skinColour;
     }
 
+
     int CheckHelpChance(Card currentCard)
     {
+        //assigns card to that one that is to be checked i.e one that user sees
         cardToCheck = currentCard;
+        //checks where that card places on the matrix and returns the value of help chance (higher the better)
         switch (firstElement())
         {
             case "1":
@@ -197,6 +174,7 @@ public class Manager : MonoBehaviour {
         return 0;
     }
 
+    //returns stats accessible by other scripts
     public float GetMoneyCurrently() { return fMoney; }
 
     public bool GetSRCurrently() { return fSR >= 10; }
@@ -205,11 +183,9 @@ public class Manager : MonoBehaviour {
 
     void StatChange(string stat, float change)
     {
+        //changes the stats dependent on what string of stat was passed in and how much to change by (can be a negative value)
         switch (stat)
         {
-            case "Building":
-                fNumBuilding += change;
-                break;
             case "Money":
                 fMoney += change;
                 break;
@@ -219,14 +195,8 @@ public class Manager : MonoBehaviour {
             case "XP":
                 fXP += change;
                 break;
-            case "Food":
-                fFood += change;
-                break;
             case "Population":
                 fPopulation += change;
-                break;
-            case "Satisfaction":
-                fSatisfaction += change;
                 break;
             case "Time":
                 timeSec = 0f;
@@ -236,9 +206,9 @@ public class Manager : MonoBehaviour {
 
     void IntialiseObjects()
     {
+        //finds the gameobject in unity editor and assigns them here
         samplingObject = GameObject.Find("SamplingPanel");
         buildingMenuObject = GameObject.Find("BuildingMenu");
-        censusMenuObject = GameObject.Find("CensusMenu");
         QuittingComfirmationObject = GameObject.Find("QuitComfirm");
 
         samplingButton = GameObject.Find("SamplingButton");
@@ -251,31 +221,14 @@ public class Manager : MonoBehaviour {
         
         moneyT = GameObject.Find("Money").GetComponent<Text>();
         srT = GameObject.Find("SR").GetComponent<Text>();
-        //populationT = GameObject.Find("Population").GetComponent<Text>();
         xpT = GameObject.Find("XP").GetComponent<Text>();
-
-        //gameTimeT = GameObject.Find("GameTimeT").GetComponent<Text>();
-    }
-
-    public void Analysing()
-    {
-        if (!analysing)
-        {
-            sampling = false;
-            building = false;
-            analysing = true;
-        }
-        else
-        {
-            analysing = false;
-        }
     }
 
     public void Building()
     {
+        //if building menu off then turn sampling menu off and turn on sampling button, opposite for if building on
         if (!building)
         {
-            analysing = false;
             sampling = false;
             building = true;
 
@@ -292,12 +245,12 @@ public class Manager : MonoBehaviour {
     }
 
     public void Sampling()
-    {
+    { 
+        //if samliong menu off then turn building menu off and turn on building button, opposite for if sampling on
         samplingButton.SetActive(false);
         BuildingButton.SetActive(true);
         if (!sampling)
         {
-            analysing = false;
             building = false;
             sampling = true;
 
@@ -317,6 +270,7 @@ public class Manager : MonoBehaviour {
 
     public void Quit()
     {
+        //used to turn on quit comfirmation menu
         if (!quitting)
         {
             quitting = true;
@@ -329,7 +283,7 @@ public class Manager : MonoBehaviour {
 
     void SetMeters()
     {
-        //float needle = fSatisfaction - 0.5f;
+        //converts floats of stats to ints so they can be changed to strings and displayed without decimal points
         int iMoney = (int)fMoney;
         moneyT.text = iMoney.ToString();
 
@@ -339,32 +293,14 @@ public class Manager : MonoBehaviour {
         int iXP = (int)fXP;
         xpT.text = iXP.ToString() + " / " + xpLimit;
 
-        //populationT.text = fPopulation.ToString();
-        int iFood = (int)fFood;
-
-        string timeS;
-        gameTimeSec += Time.deltaTime;
-        if (gameTimeSec >= gameTimeSecLimit)
-        {
-            gameTimeSec -= gameTimeSecLimit;
-            if(gameTimeSec < gameTimeSecLimit)
-            {
-                gameTimeMin++;
-            }
-        }
+        //sets fill amount of bar so can see the time left
         float displayTime = timeSec/ gameTimeSecLimit;
         GameObject.Find("TimeFillBar").GetComponent<Image>().fillAmount = 1f - displayTime;
-        //int gameTimeSecInt = (int)gameTimeSec;
-        //timeS = gameTimeMin.ToString() + ":" + gameTimeSecInt.ToString();
-        //if (gameTimeSec < 10)
-        //{
-        //    timeS = gameTimeMin.ToString() + ":0" + gameTimeSecInt.ToString();
-        //}
-        //gameTimeT.text = "Total Game Time:  " + timeS;
     }
 
     IEnumerator OnWaitOff(GameObject gameThing)
     {
+        //sets a gameobject in editor to be displayed for exactly one second
         if (waited)
         {
             waited = false;
@@ -377,9 +313,9 @@ public class Manager : MonoBehaviour {
 
     void Timer()
     {
-        string sTime;
+        //if exceeded the time limit then transistions to lose scene
         timeSec += Time.deltaTime;
-        if (timeSec >= 60)
+        if (timeSec >= gameTimeSecLimit)
         {
             Application.LoadLevel("Lose");
         }
@@ -390,36 +326,29 @@ public class Manager : MonoBehaviour {
         
     }
 
-    // Update is called once per frame
-    void Update ()
+    void CheckLevelUp()
     {
-        SetMeters();
-        Timer();
-
-        ObjectiveT.text = "Objective: Find " + objectives[randObjective];
-
-        if(fXP >= xpLimit)
+        //if level up then decrease xp, double xp limit and setr time back to original
+        if (fXP >= xpLimit)
         {
             fXP -= xpLimit;
             xpLimit *= 2f;
             StartCoroutine(OnWaitOff(levelUpNoti));
             StatChange("Time", 0f);
         }
+    }
 
+    // Update is called once per frame
+    void Update ()
+    {
+        SetMeters();
+        Timer();
+        CheckLevelUp();
+        //if there is an object then sets its activity 
         if (samplingObject != null)
             samplingObject.SetActive(sampling);
         else
             print("sampling panel gameobject is not active");
-
-        if (buildingMenuObject != null) { }
-        //buildingMenuObject.SetActive(building);
-        else
-            print("building menu gameobject is not active");
-
-        if (censusMenuObject != null)
-            censusMenuObject.SetActive(analysing);
-        else
-            print("census menu gameobject is not active");
 
         if (QuittingComfirmationObject != null)
             QuittingComfirmationObject.SetActive(quitting);

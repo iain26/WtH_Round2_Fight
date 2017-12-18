@@ -34,8 +34,6 @@ public class Selection : MonoBehaviour {
 
     public float scale = 1.25f;
 
-    int randObjective;
-
     float time = 1.25f;
 
     Deck deckClass;
@@ -53,9 +51,6 @@ public class Selection : MonoBehaviour {
 
     public delegate int HarmOrHelp(Card cardToCheck);
     public static event HarmOrHelp helpChance;
-
-    public delegate void SetObjective();
-    public static event SetObjective setObj;
 
     // Use this for initialization
     void Start ()
@@ -78,10 +73,8 @@ public class Selection : MonoBehaviour {
 
     void InitialisePositions()
     {
-        deckPos = new Vector3((float)Screen.width / 10f, (float)Screen.height / 1.25f + 1000, 0);
         tablePos = new Vector3((float)Screen.width / 7f, (float)Screen.height / 2.25f, 0);
         handPos = new Vector3((float)Screen.width / 10f, (float)Screen.height / 15f - 1000, 0);
-        discardPos = new Vector3((float)Screen.width / 4f, (float)Screen.height / 1.25f + 1000, 0);
         rejectionPos = new Vector3((float)Screen.width / 2f, (float)Screen.height / 1.25f + 1000, 0);
     }
 
@@ -135,9 +128,8 @@ public class Selection : MonoBehaviour {
         {
             commonTraits++;
         }
-        print(commonTraits);
         int rejectRandom = Random.Range (0, commonTraits);
-        int helpRandom = Random.Range(1, 10);
+        int helpRandom = Random.Range(1, 11);
         if (rejectRandom > 0)
         {
             if (helpChance(cardToHand) >= helpRandom)
@@ -152,7 +144,6 @@ public class Selection : MonoBehaviour {
                     XMLWritinger.WriteToXML(cardToHand.helpHarmStat.ToString(), "False", "Helped", System.DateTime.Now.ToString());
                 onSample("Population", 1f);
                 onSample("XP", 30f);
-                setObj();
                 cardsOnTable.Remove(cardToHand.GetComponent<Card>());
             }
             else

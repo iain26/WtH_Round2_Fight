@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Brrickk
-  productName: One Minute To Haven
+  companyName: Brrick
+  productName: Welcome To Heaven
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 1}

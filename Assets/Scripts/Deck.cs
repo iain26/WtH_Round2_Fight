@@ -7,9 +7,6 @@ public class Deck : MonoBehaviour {
 
     public GameObject cardPrefab;
     public List<Card> deck = new List<Card>();
-    public List<string> trait1 = new List<string>();
-    public List<string> trait2 = new List<string>();
-    int deckSize = 200;
 
     int count = 0;
 
@@ -29,7 +26,7 @@ public class Deck : MonoBehaviour {
         GameObject card = (GameObject)Instantiate(cardPrefab);
         card.name = "Card " + (count).ToString();
         card.transform.SetParent(GameObject.Find("Draw").transform);
-        card.transform.position = new Vector3((float)Screen.width / 2f /*+ offset*/, (float)Screen.height / 2f, 0);
+        card.transform.position = new Vector3((float)Screen.width / 2f, (float)Screen.height / 2f, 0);
         card.transform.localScale = new Vector3(5f, 5f, 5f);
         deck.Add(card.GetComponent<Card>());
         count++;

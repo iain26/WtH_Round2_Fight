@@ -71,7 +71,6 @@ public class Build : MonoBehaviour {
         if (mgr.GetMoneyCurrently() >= moneyAmount)
         {
             onPurchase("Money", -moneyAmount);
-            //onPurchase("Time", 0f);
             if(buildCount > 0)
             source.PlayOneShot(buy);
             moneyAmount *= 2f;
@@ -123,7 +122,6 @@ public class Build : MonoBehaviour {
         {
             if(buildingGrid.transform.localPosition.y > -220f - (160f * (buildCount - 5)))
             {
-                float timeLastFrame = Time.deltaTime;
                 background.uvRect = new Rect(0.07f, background.uvRect.y + Time.deltaTime * 0.0089f, 0.9f, 0.6f);
                 buildingGrid.transform.localPosition = new Vector3(0f, buildingGrid.transform.localPosition.y - (Time.deltaTime * speed), 0f);
             }

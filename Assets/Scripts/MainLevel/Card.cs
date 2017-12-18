@@ -8,15 +8,6 @@ public class Card : MonoBehaviour {
 	public string hairColour;
 	public string skinColour;
 	public string shirtColour;
-    //public string Colour;
-    //public string skinColour;
-    //public string shirtColour;
-    //public string hairColour;
-    //public string skinColour;
-    //public string shirtColour;
-
-    //Dictionary<string, string> Matrix1 = new Dictionary<string, string>();
-    //Dictionary<string, string> Matrix2 = new Dictionary<string, string>();
 
     public int helpHarmStat;
 
@@ -32,7 +23,7 @@ public class Card : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //helpHarmStat = CheckHelpStats(hairColour, shirtColour);
+       
     }
 
 	public void DrawToHand (){
